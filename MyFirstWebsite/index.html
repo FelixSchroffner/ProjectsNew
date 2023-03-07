@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>LBS4</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/uebung.css">
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<header>
+  <h1>Gastrovermittlung</h1>
+</header>
+  <nav>
+
+    <form action="#">
+      <div class="myContainer">
+      <div class="col-25"><label for="fname">Vorname:</label></div>
+     <div class="col-75"><input required type="text" id="fname"> <br></div>
+      <div class="col-25"><label for="lname">Nachname:</label></div>
+      <div class="col-75"><input required type="text" id="lname"> <br></div>
+       <div class="col-25"><label for="geburtstag">Geburtstag:</label></div>
+       <div class="col-75"><input required type="geburtstag" id="geburtstag" name="geburtstag"><br></div>
+       <div class="col-25"><label for="email">Email:</label></div>
+       <div class="col-75"><input required type="email" id="email" name="email"><br></div>
+       <div class="col-25"><label for="password">Password:</label></div>
+       <div class="col-75"><input required type="password" id="password" name="password"><br></div>
+        <div class="col-25"><label for="passwort erneut eingeben">Passwort erneut eingeben:</label></div>
+       <div class="col-75"><input required type="passwort erneut eingeben" id="passwort erneut eingeben" name="passwort erneut eingeben"><br><br></div>
+
+      </div>
+     </form>
+    <nav>
+      <nav>
+    <form action="#">
+    <div class="myContainer2">
+      <div class="col-25"><label for="straße">Straße:</label></div>
+      <div class="col-75"><input required type="straße" id="straße"> <br></div>
+      <div class="col-25"><label for="wohnort">Wohnort:</label></div>
+      <div class="col-75"><input required type="wohnort" id="wohnort"> <br></div>
+      <div class="col-25"><label for="plz">PLZ:</label></div>
+      <div class="col-75"><input required type="plz" id="plz" name="plz"><br></div>
+      <div class="col-25"><label for="bundesland">Bundesland:</label></div>
+      <div class="col-75"><select id="bundesland" name="bundesland">
+        <option value="Burgenland">Burgenland</option>
+        <option value="Kärnten">Kärnten</option>
+        <option value="Niederösterreich">Niederösterreich</option>
+        <option value="Oberösterreich">Oberösterreich</option>
+        <option value="Salzburg">Salzburg</option>
+        <option value="Steiermark">Steiermark</option>
+        <option value="Tirol">Tirol</option>
+        <option value="Vorarlberg">Vorarlberg</option>
+        <option value="Wien">Wien</option>
+      </select> <br>
+      </div>
+    <div class="col-25"><label for="telefon">Telefonnummer:</label></div>
+      <div class="col-75"><input type="tel" id="telefon" name="telefonnummer" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></div>
+      <input type="submit" value="Absenden">
+    </div>
+    </form>
+    <nav>
+
+
+
+    <!-- Add your site or application content here -->
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

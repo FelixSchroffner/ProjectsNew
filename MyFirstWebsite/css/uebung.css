@@ -1,0 +1,34 @@
+header{
+  background-color: #b3d4fc;
+  text-align: center;
+  font-family: Arial;
+  padding: 10px;
+  margin: 30px;
+  border-style: solid;
+}
+nav{
+  background-color: #555555;
+}
+
+.myContainer{
+  width: 500px;
+  background-color: dimgray;
+  margin: 0 auto;
+}
+.col-25{
+  float: left;
+  width: 25%;
+  text-align: right;
+}
+.col-75{
+  float: left;
+  width: 75%;
+  text-align: right;
+}
+.myContainer2{
+  width: 500px;
+  background-color: dimgray;
+  margin: 0 auto;
+}
+
+

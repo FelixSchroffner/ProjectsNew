@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form method="post" action="upload.php" enctype="multipart/form-data">
+  <label for="file">Datei auswählen:</label>
+  <input type="file" name="file" id="file" required>
+
+  <input type="submit" value="Hochladen">
+</form>
+
+<form
+  method="post" action="login.php">
+  <label for="username">Benutzername:</label>
+  <input type="text" name="username" id="username" required>
+
+  <label for="password">Passwort:</label>
+  <input type="password" name="password" id="password" required>
+
+  <input type="submit" value="Anmelden">
+</form>
+</body>
+</html>
