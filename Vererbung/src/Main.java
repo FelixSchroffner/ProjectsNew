@@ -3,7 +3,7 @@
  * von der verschiedene spezialisierte Klassen abgeleitet werden.
  * Jede Klasse implementiert eine spezielle Methode und hat ein spezielles Attribut.
  * In der Main Methode werden verschiedene Objekte der abgeleiteten Klassen erstellt und in einem Basiszeigerarray gespeichert.
- * Die Objekte s werden dann durch das Aufrufen der gemeinsamen Methode der Basisklasse getestet.
+ * Die Objekte werden dann durch das Aufrufen der gemeinsamen Methode der Basisklasse getestet.
  */
 
 
@@ -27,6 +27,9 @@ public class Main {
             watercraft.move();
             System.out.println();
         }
+
+
     }
 
 }
+

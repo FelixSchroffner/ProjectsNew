@@ -1,27 +1,350 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+/* Body-Styling */
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+margin: 0;
+}
 
-<form method="post" action="upload.php" enctype="multipart/form-data">
-  <label for="file">Datei auswählen:</label>
-  <input type="file" name="file" id="file" required>
+/* Header-Styling */
+header {
+background-color: #428bca;
+height: 80px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  <input type="submit" value="Hochladen">
-</form>
+/* Logo-Styling */
+.logo {
+font-size: 24px;
+font-weight: bold;
+}
 
-<form
-  method="post" action="login.php">
-  <label for="username">Benutzername:</label>
-  <input type="text" name="username" id="username" required>
+/* Register-Button-Styling */
+#register-btn {
+background-color: #428bca;
+color: #fff;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+margin-right: 10px;
+}
 
-  <label for="password">Passwort:</label>
-  <input type="password" name="password" id="password" required>
+/* Login-Button-Styling */
+#login-btn {
+background-color: #fff;
+color: #428bca;
+border: 2px solid #428bca;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
 
-  <input type="submit" value="Anmelden">
-</form>
-</body>
-</html>
+/* Register-Tab-Styling */
+#register-tab {
+display: none;
+}
+
+/* Login-Tab-Styling */
+#login-tab {
+display: none;
+}
+
+/* Active-Tab-Styling */
+.tab-active {
+display: block;
+}
+
+/* Tab-Container-Styling */
+.tab-container {
+background-color: #fff;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-top: 20px;
+}
+
+/* Form-Input-Styling */
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: none;
+border-radius: 5px;
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Form-Button-Styling */
+form button[type="submit"] {
+background-color: #428bca;
+color: #fff;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+/* Form-Label-Styling */
+form label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+/* Form-Error-Styling */
+form .form-error {
+color: red;
+margin-top: 10px;
+}
+
+/* Form-Success-Styling */
+form .form-success {
+color: green;
+margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+background-color: #F5F5F5;
+}
+
+.logo {
+width: 100px;
+height: auto;
+margin-right: 5px;
+}
+
+h1 {
+margin: 0;
+}
+
+.tab {
+display: inline-block;
+margin: 0 20px;
+padding: 10px;
+border: 1px solid #DDD;
+border-radius: 5px 5px 0 0;
+background-color: #FFF;
+cursor: pointer;
+}
+
+.tab.active {
+border-bottom: none;
+background-color: #F5F5F5;
+}
+
+.tab-content {
+padding: 20px;
+border: 1px solid #DDD;
+background-color: #FFF;
+}
+
+#register-tab {
+border-top-left-radius: 5px;
+}
+
+#login-tab {
+border-top-right-radius: 5px;
+}
+
+.tab-container {
+text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f5f5f5;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0px 0px 10px #000000;
+}
+
+h1 {
+text-align: center;
+}
+
+#register-form {
+margin-top: 50px;
+}
+
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: none;
+box-shadow: 5px 5px 5px #ddd;
+}
+
+#register-form input[type="submit"] {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+border-radius: 5px;
+border: none;
+background-color: #4CAF50;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+}
+
+
+#login-link {
+display: block;
+text-align: center;
+margin-top: 20px;
+}
+
+#login-link a {
+color: #333;
+text-decoration: none;
+border-bottom: 2px solid #333;
+}
+
+#login-link a:hover {
+border-bottom: 2px solid #4CAF50;
+}
+
+
+#login-form {
+margin-top: 50px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: none;
+box-shadow: 0px 0px 5px #ddd;
+}
+
+#login-form input[type="submit"] {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+border-radius: 5px;
+border: none;
+background-color: #4CAF50;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+
+$content = file_get_contents("user.csv");
+
+$fh = fopen("user.csv", "w");
+
+if(empty($content)){
+$content = "\"Vorname\";\"Nachname\"\n";
+}
+
+$content .= "\"$fname\";\"$lname\"\n";
+
+fwrite($fh, $content);

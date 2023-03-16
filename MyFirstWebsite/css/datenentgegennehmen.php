@@ -1,88 +1,97 @@
-<?php
-// Überprüfen, ob das Formular abgeschickt wurde
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Dateiinformationen abrufen
-  $filename = $_FILES["file"]["name"];
-  $tmpname = $_FILES["file"]["tmp_name"];
+/* Allgemeine Stile für die gesamte Seite */
 
-  // Datei in ein Verzeichnis am Webserver speichern
-  move_uploaded_file($tmpname, "uploads/" . $filename);
+body {
+font-family: Arial, sans-serif;
+background-color: #f5f5f5;
 }
 
-
-// Überprüfen, ob das Formular abgeschickt wurde
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Daten aus dem Formular abrufen
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-
-  // Salt und Pepper hinzufügen
-  $salt = "add_some_salt_here";
-  $pepper = "add_some_pepper_here";
-  $password_hashed = hash("sha256", $salt . $password . $pepper);
-
-  // Benutzerdaten aus der CSV-Datei lesen
-  $file = fopen("data.csv", "r");
-  while (($data = fgetcsv($file)) !== FALSE) {
-    if ($data[0] == $username && $data[2] == $password_hashed) {
-      // Benutzer gefunden, Session-ID generieren
-      session_start();
-      $_SESSION["username"] = $username;
-      session_regenerate_id();
-      header("Location: home.php");
-      exit();
-    }
-  }
-  fclose($file);
-
-  // Wenn der Benutzer nicht gefunden wurde, Fehlermeldung anzeigen
-  echo "Falscher Benutzername oder Passwort";
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0px 0px 10px #ddd;
 }
 
-
-// Session starten und Benutzername aus der Session abrufen
-session_start();
-if (!isset($_SESSION["username"])) {
-  header("Location: login.php");
-  exit();
+h1 {
+text-align: center;
 }
-$username = $_SESSION["username"];
-?>
 
-  <html>
-  <head>
-    <title>Willkommen, <?php echo $username; ?></title>
-  </head>
-  <body>
-  <h1>Willkommen, <?php echo $username; ?>!</h1>
+/* Stile für die Registrierungsform */
 
-  <p>Hier ist Ihre hochgeladene Datei:</p>
-  <ul>
-    <?php
-    // Dateien im "uploads"-Verzeichnis auflisten
-    $dir = "uploads/";
-    $files = scandir($dir);
-    foreach ($files as $file) {
-      if ($file != "." && $file != "..") {
-        echo "<li><a href=\"uploads/$file\">$file</a></li>";
-      }
-    }
-    ?>
-  </ul>
+#register-form {
+margin-top: 50px;
+}
 
-  <a href="logout.php">Ausloggen</a>
-  </body>
-  </html>
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: none;
+box-shadow: 0px 0px 5px #ddd;
+}
 
+#register-form input[type="submit"] {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+border-radius: 5px;
+border: none;
+background-color: #4CAF50;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+}
 
-<?php
-session_start();
-session_unset();
-session_destroy();
-header("Location: login.php");
-exit();
-?>
-  ``
+/* Stile für den Einloggen-Link */
 
-?>
-<?php
+#login-link {
+display: block;
+text-align: center;
+margin-top: 20px;
+}
+
+#login-link a {
+color: #333;
+text-decoration: none;
+border-bottom: 2px solid #333;
+}
+
+#login-link a:hover {
+border-bottom: 2px solid #4CAF50;
+}
+
+/* Stile für die Login-Form */
+
+#login-form {
+margin-top: 50px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: none;
+box-shadow: 0px 0px 5px #ddd;
+}
+
+#login-form input[type="submit"] {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+border-radius: 5px;
+border: none;
+background-color: #4CAF50;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+}
+
