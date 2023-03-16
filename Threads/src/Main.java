@@ -5,7 +5,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             int choice = 0;
             while (choice != 3) {
-                System.out.println("Wähle eine Methode aus:");
+                System.out.println("Waehle eine Methode aus:");
                 System.out.println("1. Thread-Klasse");
                 System.out.println("2. Runnable-Interface");
                 System.out.println("3. Beenden");
@@ -26,10 +26,10 @@ public class Main {
                         t4.start();
                         break;
                     case 3:
-                        System.out.println("Das Programm wird beendet.");
+                        System.out.println("Programm wird beendet.");
                         break;
                     default:
-                        System.out.println("Ungültige Eingabe");
+                        System.out.println("Ungueltige Eingabe");
                         break;
                 }
             }
