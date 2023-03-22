@@ -12,7 +12,11 @@ public class Verbraucher extends Thread {
     }
     public void stopVerbrauch() {
         this.isRunning = false;
+
     }
+
+
+
     public void pauseVerbrauch() {
         this.isPaused = true;
     }
@@ -22,7 +26,6 @@ public class Verbraucher extends Thread {
             buffer.notifyAll();
         }
     }
-
     public void run() {
         while (isRunning && !isPaused) {
             synchronized(buffer) {

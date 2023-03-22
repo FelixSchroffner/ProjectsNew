@@ -29,6 +29,7 @@ public class Main {
                 if (!isPaused) {
                     erzeuger.pauseErzeugung();
                     verbraucher.pauseVerbrauch();
+                    erzeuger.setPaused(!erzeuger.isPaused());
                     isPaused = true;
                 } else {
                     erzeuger.resumeErzeugung();

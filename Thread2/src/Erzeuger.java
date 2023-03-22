@@ -10,20 +10,32 @@ public class Erzeuger extends Thread {
     public Erzeuger(Vector<Integer> buffer) {
         this.buffer = buffer;
     }
-
     public void stopErzeugung() {
         this.isRunning = false;
     }
-
     public void pauseErzeugung() {
         this.isPaused = true;
     }
-
     public void resumeErzeugung() {
         this.isPaused = false;
         synchronized(buffer) {
             buffer.notifyAll();
         }
+    }
+    public void setPaused(boolean paused) {
+        isPaused = paused;
+    }
+
+    public void setRunning(boolean running) {
+        isRunning = running;
+    }
+
+    public boolean isPaused() {
+        return isPaused;
+    }
+
+    public boolean isRunning() {
+        return isRunning;
     }
 
     public void run() {
