@@ -21,7 +21,11 @@ public abstract class Watercraft {
         }
 
         public abstract void move();
+
+    public Object getName() {
+    return this.name;
     }
+}
 
 
 

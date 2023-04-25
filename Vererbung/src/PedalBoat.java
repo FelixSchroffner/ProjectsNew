@@ -1,26 +1,18 @@
-/**
- * Diese Klasse stellt ein Tretboot dar.
- */
-public class PedalBoat extends Watercraft {
+public class PedalBoat extends Watercraft implements NonMotorizedVehicle {
     private int numberOfPedals;
 
-    /**
-     * Konstruktor für die Tretbootklasse
-     * @param name Name des Tretboots
-     * @param price Preis des Tretboots
-     * @param numberOfPedals Anzahl der Pedale
-     */
     public PedalBoat(String name, double price, int numberOfPedals) {
         super(name, price);
         this.numberOfPedals = numberOfPedals;
     }
 
-    /**
-     * Fügt die abstrakte Methode der Basisklasse hinzu um das Verhalten des Tretboots einzubauen.
-     * In diesem Fall gibt es einfach eine Ausgabe, dass das Tretboot sich durch Tretbewegungen fortbewegt.
-     */
     @Override
     public void move() {
-        System.out.println("Das Tretbot bewegt sich durch Tretbewegungen.");
+        System.out.println("Das Tretboot bewegt sich durch Tretbewegungen.");
+    }
+
+    @Override
+    public void pedal() {
+        System.out.println("Das Tretboot wird durch das Treten der Pedale angetrieben.");
     }
 }

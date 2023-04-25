@@ -1,35 +1,85 @@
-/**
- * Dieses Programm demonstriert die Verwendung von Polymorphie durch eine Basisklasse für Wasserfahrzeuge,
- * von der verschiedene spezialisierte Klassen abgeleitet werden.
- * Jede Klasse implementiert eine spezielle Methode und hat ein spezielles Attribut.
- * In der Main Methode werden verschiedene Objekte der abgeleiteten Klassen erstellt und in einem Basiszeigerarray gespeichert.
- * Die Objekte werden dann durch das Aufrufen der gemeinsamen Methode der Basisklasse getestet.
- */
-
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
-
-    /**
-     * Erstellt verschiedene Wasserfahrzeuge und speichert sie in einem Basiszeigerarray.
-     * Testet jedes Wasserfahrzeug indem die gemeinsame Methode der Basisklasse aufgerufen wird.
-     * @param args String-Array das die Argumente enthält.
-     */
-
     public static void main(String[] args) {
-        Watercraft[] watercrafts = new Watercraft[4];
-        watercrafts[0] = new Motorboat("Motorboot", 9999.9 , 250);
-        watercrafts[1] = new RowingBoat("Ruderboot", 499.9, 2);
-        watercrafts[2] = new PedalBoat("Tretbot", 699.9, 4);
-        watercrafts[3] = new Motorboat("Motorboot2", 14999.9, 450);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Object> vehicles = new ArrayList<>();
 
-        for (Watercraft watercraft : watercrafts) {
-            System.out.println(watercraft.name + " kostet " + watercraft.price + " Euro");
-            watercraft.move();
-            System.out.println();
+        while (true) {
+            System.out.println("Menue:");
+            System.out.println("1 - Motorboot hinzufuegen");
+            System.out.println("2 - Ruderboot hinzufuegen");
+            System.out.println("3 - Tretboot hinzufuegen");
+            System.out.println("4 - Fahrzeug loeschen");
+            System.out.println("5 - Fahrzeug suchen");
+            System.out.println("6 - Fahrzeug bewegen");
+            System.out.println("7 - Programm beenden");
+
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.print("Name: ");
+                    String motorboatName = scanner.next();
+                    System.out.print("Preis: ");
+                    double motorboatPrice = scanner.nextDouble();
+                    System.out.print("Pferdestaerken: ");
+                    int horsepower = scanner.nextInt();
+                    Motorboat motorboat = new Motorboat(motorboatName, motorboatPrice, horsepower);
+                    vehicles.add(motorboat);
+                    break;
+                case 2:
+                    System.out.print("Name: ");
+                    String rowingBoatName = scanner.next();
+                    System.out.print("Preis: ");
+                    double rowingBoatPrice = scanner.nextDouble();
+                    System.out.print("Anzahl Sitze: ");
+                    int numberOfSeats = scanner.nextInt();
+                    RowingBoat rowingBoat = new RowingBoat(rowingBoatName, rowingBoatPrice, numberOfSeats);
+                    vehicles.add(rowingBoat);
+                    break;
+                case 3:
+                    System.out.print("Name: ");
+                    String pedalBoatName = scanner.next();
+                    System.out.print("Preis: ");
+                    double pedalBoatPrice = scanner.nextDouble();
+                    System.out.print("Anzahl Pedale: ");
+                    int numberOfPedals = scanner.nextInt();
+                    PedalBoat pedalBoat = new PedalBoat(pedalBoatName, pedalBoatPrice, numberOfPedals);
+                    vehicles.add(pedalBoat);
+                    break;
+                case 4:
+                    System.out.print("Welches Fahrzeug soll geloescht werden? ");
+                    int indexToDelete = scanner.nextInt();
+                    if (indexToDelete >= 0 && indexToDelete < vehicles.size()) {
+                        vehicles.remove(indexToDelete);
+                    }
+                    break;
+                case 5:
+                    System.out.print("Nach welchem Fahrzeug soll gesucht werden? ");
+                    String vehicleNameToSearch = scanner.next();
+                    for (Object vehicle : vehicles) {
+                        if (vehicle instanceof Watercraft && ((Watercraft) vehicle).getName().equals(vehicleNameToSearch)) {
+                            System.out.println("Fahrzeug gefunden: " + vehicle);
+                            break;
+                        }
+                    }
+                    break;
+                case 6:
+                    System.out.print("Welches Fahrzeug soll bewegt werden? ");
+                    int indexToMove = scanner.nextInt();
+                    if (indexToMove >= 0 && indexToMove < vehicles.size()) {
+                        Object vehicleToMove = vehicles.get(indexToMove);
+                        if (vehicleToMove instanceof Watercraft) {
+                            ((Watercraft) vehicleToMove).move();
+                        }
+                    }
+                    break;
+                case 7:
+                    System.exit(0);
+            }
         }
-
-
     }
-
 }
+
 
